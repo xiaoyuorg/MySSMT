@@ -12,25 +12,31 @@
             <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-        <!-- 数据库的相关配置 -->
         <jdbcConnection
                 connectionURL="jdbc:mysql://127.0.0.1:3306/ssm?characterEncoding=utf8"
                 driverClass="com.mysql.jdbc.Driver" password="123456" userId="root"/>
-
-        <!-- 实体类生成的位置 -->
         <javaModelGenerator targetPackage="com.xiaoyu.pojo"
                             targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <!-- Mapper 接口文件的位置 -->
         <sqlMapGenerator targetPackage="com.xiaoyu.dao"
                          targetProject="src/main/resources/mapping"/>
-
         <!-- targetPackage：mapper接口生成的位置 -->
         <javaClientGenerator targetPackage="com.xiaoyu.dao"
                              targetProject="src/main/java" type="XMLMAPPER"/>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+   NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
         <!-- 指定数据库表 -->
-        <table schema="ssm" tableName="user_t"/>
+        <table schema="ssm" tableName="user_t">
+        </table>
+
     </context>
 
     <!--    <context id="context2">

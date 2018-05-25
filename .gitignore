@@ -2,6 +2,3 @@
 MySSMT.iml
 .idea/workspace.xml
 MySSMT.iml
-*.log
-target/classes/generator.properties
-src/main/resources/jdbc.properties

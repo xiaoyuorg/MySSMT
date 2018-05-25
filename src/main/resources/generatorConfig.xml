@@ -15,7 +15,7 @@
         <!-- 数据库的相关配置 -->
         <jdbcConnection
                 connectionURL="jdbc:mysql://127.0.0.1:3306/ssm?characterEncoding=utf8"
-                driverClass="com.mysql.jdbc.Driver" password="123456" userId="root"/>
+                driverClass="com.mysql.jdbc.Driver" password="a123456!" userId="root"/>
 
         <!-- 实体类生成的位置 -->
         <javaModelGenerator targetPackage="com.xiaoyu.pojo"
